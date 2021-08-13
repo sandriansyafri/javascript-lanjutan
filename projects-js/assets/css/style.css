@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    color: #333;
+    font-family: "Verdana";
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #333;
+    transition: 0.3s width, 0.3s height 0.3s, 1s background;
+}
+
+.size {
+    width: 150px;
+    height: 150px;
+}
+
+.caption {
+    background: #333;
+}
