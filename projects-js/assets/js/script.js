@@ -43,4 +43,4 @@ const chainNumber = numbers
     .filter((number) => number < 5)
     .map((number) => number * 3)
     .reduce((firstValue, nextValue) => firstValue + nextValue, 0);
-console.log(chainNumber);
+// console.log(chainNumber);
