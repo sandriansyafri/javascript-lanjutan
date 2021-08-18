@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Fundamentals</title>
-    </head>
-    <body></body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamentals</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #444;
+        display: flex;
+        height: 100vh;
+      }
+      h1 {
+        margin: auto;
+        cursor: pointer;
+        font-size: 64px;
+        letter-spacing: 2px;
+      }
 
-    <script src="assets/js/script.js"></script>
+      h1 span {
+        display: inline-block;
+        transform: scale(0.8);
+        transition: 0.3s ease;
+      }
+
+      h1 span:hover {
+        transform: scale(2) translateY(-10px) translateX(-10px);
+        color: #222;
+      }
+    </style>
+  </head>
+  <body></body>
+  <ul style="display: none">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <h1>SANDRIAN</h1>
+  <script src="assets/js/script.js"></script>
 </html>
