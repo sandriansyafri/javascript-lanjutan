@@ -49,8 +49,18 @@ const showDetailCard = function (movie) {
 
 const getMovies = function (keywords) {
   return fetch(`http://www.omdbapi.com/?apikey=2b9a984b&s=${keywords}`)
-    .then((res) => res.json())
-    .then((res) => res.Search);
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(res.statusText)
+      }
+      return res.json();
+    })
+    .then((res) => {
+      if (res.Response === 'False') {
+        throw new Error(res.Error)
+      }
+      return res.Search;
+    });
 };
 
 const getDetailMovies = function (id) {
@@ -74,9 +84,13 @@ const updateDetailUI = function (movie) {
 
 btnSearch.addEventListener("click", async function (e) {
   e.preventDefault();
-  const keywords = document.querySelector("input[name=keywords]").value;
-  const movies = await getMovies(keywords);
-  updateUI(movies);
+  try {
+    const keywords = document.querySelector("input[name=keywords]").value;
+    const movies = await getMovies(keywords);
+    updateUI(movies);
+  } catch (e) {
+    alert(e);
+  }
 });
 
 document.addEventListener("click", async function (e) {
